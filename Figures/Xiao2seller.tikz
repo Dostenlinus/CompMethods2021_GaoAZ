@@ -1,5 +1,5 @@
 \tikzstyle{level 1} = [level distance = 15mm, sibling distance = 40mm]
-
+\tikzstyle{level 2} = [level distance = 15mm, sibling distance = 20mm]
 \node(0){B}
 	child{node{B}
 		child{node{1}
