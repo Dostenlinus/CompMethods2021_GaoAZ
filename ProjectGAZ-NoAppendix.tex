@@ -60,9 +60,18 @@ This note collects a few non-cooperative bargaining models that can be applied t
 %    The \href{https://econ-ark.org/materials/BufferStockTheory?dashboard}{dashboard} lets users see consequences of alternative parameters in an interactive framework.} % end parbox{\textwidth}
 %\end{footnotesize}
 
-%\begin{authorsinfo}
-%  \name{Contact: \href{mailto:ccarroll@jhu.edu}{\texttt{ccarroll@jhu.edu}}, Department of Economics, 590 Wyman Hall, Johns Hopkins University, Baltimore, MD 21218, \url{https://www.econ2.jhu.edu/people/ccarroll}, and National Bureau of Economic Research.}
-%\end{authorsinfo}
+\begin{authorsinfo}
+	\name{Contact: \href{mailto:zgao32@jhu.edu}{\texttt{zgao32@jhu.edu}}, Department of Economics, 590 Wyman Hall, Johns Hopkins University, Baltimore, MD 21218.}
+\end{authorsinfo}
+
+\newcommand{\thankstext}{This benefitted substantially from helpful comments by Prof. Ying Chen from the Department of Economics of the Johns Hopkins University. Further, I would like to thank my fellow PhD student Decory Edwards for his comments.}
+
+\ifthenelse{\boolean{Web}}{}{
+	\begin{minipage}{0.9\textwidth}
+		\tiny \thankstext
+	\end{minipage}
+} % {Web}
+{\titlepagefinish}
 
 %\newcommand{\thankstext}{
 
@@ -81,10 +90,10 @@ Vote buying is a prevailing phenomenon, where political leaders offer side payme
 
 The model that fits best with such scenario is sequential bargaining, where a principal negotiates with a group of n agents sequentially, and needs q agents' cooperation ($q \leq N$) to "win". For simplicity, we only consider the case with one political leader and multiple voters to avoid competition between various vote buyers.
 
-In this note, we introduce three models with different specifications in the form of payments, the distribution of bargaining power, endogeneity of the sequence order and specifications on the q and $\delta$. These models are largely inspired by Cai(2003), in which the sequential structure is implemented and Markov equilibrium is implemented as the equilibrium concept to reduce the number of equilibria to finite in order to increase predicting power of the model.
+In this note, we introduce three models with different specifications in the form of payments, the distribution of bargaining power, endogeneity of the sequence order and specifications on the q and $\delta$. These models are largely inspired by \cite{Cai03}, in which the sequential structure is implemented and Markov equilibrium is implemented as the equilibrium concept to reduce the number of equilibria to finite in order to increase predicting power of the model.
 
 
-\section{Xiao(2018)}\label{subsec:Xiao}
+\section{\cite{Xiao}}\label{subsec:Xiao}
 
 \subsection{Model}\label{subsec:Xiao-Model}
 This model is a infinite-horizon bargaining game with complete-information, and incorporates endogenous bargaining order by making sellers asymmetric. The model is based on the scenario that a real estate developer needs to purchase land from a group of sellers, where each seller holds different lots of land. In the vote-buying setting, we can rationalize such setting as the policy maker bargaining with different coalition of voters, where each coalition holds different number of votes. Here, we implement the "N-seller game without commitment to order" model.
@@ -93,32 +102,26 @@ The game has N+1 players (1 buyer and N sellers). We denote the buyer by B and t
 
 In the first period, the buyer pick one seller $i_1$ and make an offer $p_{i,1}$. If the seller accepts the offer, the buyer makes the payment immediately. If the seller rejects the offer, the game goes to the second period, where the seller makes an offer $q_{i, 1}$. If the buyer accepts, she makes the payment immediately. If she rejects, no agreements made in period 1. The game then goes to the next period, where the buyer pick one of the remaining sellers who hasn't sold his votes (so if in period 1, no agreements were made, the buyer can reach out to the same seller).
 
-The game continues until all sellers sell their votes or no new purchases can be made in any future periods. Figure 1 demonstrates the game tree for $N = 2$.
+The game continues until all sellers sell their votes or no new purchases can be made in any future periods. Figure \ref{fig:Xiao2seller} demonstrates the game tree for $N = 2$.
 
 %tikz graph
 \providecommand{\figName}{Xiao2seller}
 \providecommand{\figFile}{\figName}
 \hypertarget{\figFile}{}
 \input{\FigDir/\figName}
-%This input does not work
 
-Figure \ref{fig:Xiao2seller} 2-seller Game Tree %Yet the reference works...
 
 \subsection{Payoffs}\label{subsec:Xiao-Payoff}
 
 An outcome is denoted as $(p_1, p_2, ..., p_N, t_1, t_2, ..., t_N)$ where seller i sells his lots of votes in period $t_i$ at price $p_i$. If a seller i doesn't sell his lot of votes, we can assume $t_i$ goes to infinity and $p_i= 0$  For a seller i, the present discounted payoff is denoted as
 
-\begin{align}
-  \pi_i &= H_{i, t_i-1} + \delta^{t_i-1}p_i \\
-        &= v_i(1-\delta)\sum_{s=1}^{t-1} \delta^{s-1} + \delta^{t_i-1}p_i  \label{eq:XiaoSPO}
-\end{align}
+\input{\LtxDir\EqDir/XiaoSPO}
 
 Here, $H_{i, t_i-1}$ denotes the continuous payoff before the policy passes, and the later half denotes the payment by the buyer.
 
 For the buyer, the present discounted payoff is denoted as 
-\begin{align}
-\pi_B = \delta^{max\{t_1, ..., t_N\} - 1} - \sum_{i=1}^{N}\delta^{t_i-1}p_i \label{eq:XiaoBPO}
-\end{align}
+
+\input{\LtxDir\EqDir/XiaoBPO}
 
 \subsection{Results}\label{subsec:Xiao-Results}
 
@@ -151,15 +154,15 @@ Each seller i, when being approached, accept price no less than $p_i^N$ and sugg
 
 \subsection{Remarks}\label{subsec:Xiao-Remarks}
 
-In the Xiao(2018) model, sellers' bargaining power is implied by their voting weights. The buyer can choose which seller to approach at each period, which implies endogeneity of sequence order. The model provides a unique equilibrium if the voting weights differs sufficiently, but does not give insightful results for similar or equal-weight sellers.
+In the \cite{Xiao} model, sellers' bargaining power is implied by their voting weights. The buyer can choose which seller to approach at each period, which implies endogeneity of sequence order. The model provides a unique equilibrium if the voting weights differs sufficiently, but does not give insightful results for similar or equal-weight sellers.
 
 The main contribution of this paper is to show the predicting power of Markov subgame perfect equilibrium in this specific sequential bargaining setting with restrictions on parameters.
 
-\section{Iaryczower and Oliveros (2019)}
+\section{\cite{InOCoHoldUP}}
 
 \subsection{Model}\label{subsec:InO-Model}
 
-The number and roll of players are identical to that of Xiao(2018). All agents share the same discount factor $\delta \in (0, 1)$.
+The number and roll of players are identical to that of \cite{Xiao}. All agents share the same discount factor $\delta \in (0, 1)$.
 
 In this model, the buyer only needs to secure $q < N$ votes to pass the policy. Each agent has one vote. In each period t, the buyer is randomly assigned to one of the k(t) sellers who hasn't sold his vote to the seller with equal probability 1/k(t).  
 
@@ -171,7 +174,7 @@ If the policy does not pass, the terminal period payoff is 0 for all agents (not
 
 \subsection{Payoffs}\label{subsec:InO-Payoffs}
 
-Using the same notation as in Xiao(2018), for seller i who sold the vote, the present-discounted payoff is
+Using the same notation as in \cite{Xiao}, for seller i who sold the vote, the present-discounted payoff is
 \begin{equation}
 	\pi_i = I(Policy passes)\delta^{max\{t_1, ..., t_N\} - 1} z + \delta^{t_i-1}p_i 
 \end{equation}
@@ -195,14 +198,14 @@ The increase in bargaining power of the sellers leads to decrease in efficiency 
 
 \subsection{Remarks}\label{subsec:InO-Remarks}
 
-This model studies bargaining power different from that of Xiao(2018) in a way that separates bargaining power from the lots of votes that a seller holds, and reveals the potential "collective hold-up/breakdown" problem using a relatively simple model. 
+This model studies bargaining power different from that of \cite{Xiao} in a way that separates bargaining power from the lots of votes that a seller holds, and reveals the potential "collective hold-up/breakdown" problem using a relatively simple model. 
 
 The model also adds complexity to itself by relaxing unanimity.
 
 A potential extension would be to consider endogenous bargaining order with heterogeneous sellers (like sellers with different lots, or different $z_i$s). In this model, the key reason why coalitions can form is that buyers can't control which seller to approach. If this restriction is relaxed, the seller may be able to break the coalition by securing votes of those who have fewer costs, then exploit the remaining sellers.
 
 
-\section{Chen and Zapal(2021)}\label{subsec:CnZ}
+\section{\cite{CnZSeqVB}}\label{subsec:CnZ}
 
 \subsection{Model}\label{subsec:CnZ-model}
 
@@ -267,7 +270,7 @@ In any subgame  $\Gamma(S,r,t)$, let $S^r \subseteq S$ denote the set of r unapp
 	y - t > \sum_{i \in S^r} x_i
 \end{equation}
 
-This is analogous to the notion of "profitability" in Xiao(2018).
+This is analogous to the notion of "profitability" in \cite{Xiao}.
 
 We then introduce the notion of "dispensability". At state (S,r,t), a seller i is dispensable if $y-t > \sum_{j \in S_{-i}^r} x_i$, i.e. the policy would pass without securing i's vote. Otherwise, a seller is indispensable at this state.
 
@@ -282,9 +285,9 @@ If in first period, seller q is indispensable, then the buyer can approach selle
 \subsubsection{Up-front Payment}
 
 Consider a state (S, r), with $\delta$ sufficiently large, the policy pass (is "profitable") if y > W(S, r), where
-\begin{equation}
-	W(S, r) = \min_{T \in 2^S} max \{\sum_{i \in T} x_i, W((S \backslash T) \backslash max(S\backslash T), r - |T|)\}
-\end{equation} 
+
+\input{\LtxDir\EqDir/CZUP}
+
 maxA is the seller $i\in A$ with highest $x_i$.
 
 Then we can define a seller to be dispensable at state (S, r) if $y > W(S\backslash \{i\}, r)$.
@@ -295,7 +298,12 @@ There may be multiple equilibria with different lengths of temptation and exploi
 
 \subsubsection{Comparison}
 
-For patient enough agents, the transfer promise yields higher payoffs compared to the up-front payment. The intuition is that, in up-front payment, the seller can exploit sellers with higher costs at later periods to reduce present-discounted payments.
+For patient enough agents, the transfer promise yields higher payoffs compared to the up-front payment. The intuition is that, in up-front payment, the seller can exploit sellers with higher costs at later periods to reduce present-discounted payments. Figure \ref{fig:sampleTP} and Figure \ref{fig:sampleUP} below illustrates payment that agents would receive in the following setting: $x_1 = 1, x_2 \in (1, 10), x_3 = 10, y = 10, \delta = 0.2$.
+
+
+\input{\FigDir/sampleTP}
+\input{\FigDir/sampleUP}
+
 
 \subsection{Remarks}
 
@@ -303,7 +311,7 @@ This model gives insights on comparing different offer types. However, unlike th
 
 In addition, the commitment assumption that sellers who accepts transfer promises would vote in favor of the buyer seems to be too restrictive in real-world practices. It would be interesting to study how sellers would behave if commitment is not required. A crude observation is that dispensable sellers can't be exploited as in the current model.
 
-It would also be interesting to see how bargaining power can be implemented to this model. Both Xiao(2018) and Iaryczoer and Oliviros (2019)'s implementations can be incorporated.
+It would also be interesting to see how bargaining power can be implemented to this model. Both \cite{Xiao} and \cite{InOCoHoldUP}'s implementations can be incorporated.
 
 \section{Conclusion and Potential Extensions}
 
@@ -319,13 +327,10 @@ In addition to all the previous remarks, one additional extension that comes to 
 Completely private history may not be that interesting, since sellers have very limited information on past offers. One alternative approach may be public history among coalitions, where sellers with similar interests communicate with each other and share past offer details within the group. We can also allow information update via networks, which I'm not sure if it worth the additional complexity.
 
 
-%failed to work with economics.bib, so go for the easy way...
 \newpage
 
-\cite{Cai03}
-\cite{CnZSeqVB}
-\cite{InOCoHoldUP}
-\cite{Xiao}
+
+
 
 
 \onlyinsubfile{\input{\LaTeXInputs/bibliography_blend}}

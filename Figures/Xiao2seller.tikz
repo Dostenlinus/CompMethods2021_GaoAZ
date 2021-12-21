@@ -1,31 +1,60 @@
+\tikzset{
+	solid node/.style = {circle, draw, inner sep = 1.5, fill = black},
+	hollow node/.style = {circle, draw, inner sep = 1.5}
+}
+
 \tikzstyle{level 1} = [level distance = 15mm, sibling distance = 40mm]
-\tikzstyle{level 2} = [level distance = 15mm, sibling distance = 20mm]
-\node(0){B}
-	child{node{B}
-		child{node{1}
-			child{node{1}
-				child{node{B}
-					child{node{G(2)}}
-					child{node{B}
-						child{node{G(B,1)}}
-						child{node{G(B,2)}}
+\tikzstyle{level 2} = [level distance = 10mm, sibling distance = 15mm]
+\node(0)[solid node, label = above:{$B$}]{}
+child{node[solid node, label = above:{$B$}]{}
+	child{node[hollow node, label = left:{$1$}]{}
+		child{node[hollow node, label = left:{$1$}]{}
+			child{node[solid node, label = right:{$B$}]{}
+				child{node{G(2)}
+					edge from parent node[left]{A}
+				}
+				child{node[solid node, label = right:{$B$}]{}
+					child{node{G(B,1)}
+						edge from parent node[left]{R}
 					}
+					child{node{G(B,2)}
+						edge from parent node[right]{A}
+					}
+					edge from parent node[right]{R}
 				}
 			}
-			child{node{G(2)}}
+			edge from parent node[left, yshift = 2]{R}
 		}
+		child{node{G(2)}
+			edge from parent node[right]{A}
+		}
+		edge from parent node{$p_1$}
 	}
-	child{node{B}
-		child{node{2}
-			child{node{G(1)}}
-			child{node{2}
-				child{node{B}
-					child{node{B}
-						child{node{G(B,2)}}
-						child{node{G(B,1)}}
+	edge from parent node[left, yshift = 5]{$1$}
+}
+child{node[solid node, label = above:{$B$}]{}
+	child{node[hollow node, label = right:{$2$}]{}
+		child{node{G(1)}
+			edge from parent node[left]{A}
+		}
+		child{node[hollow node, label = right:{$2$}]{}
+			child{node[solid node, label = right:{$B$}]{}
+				child{node[solid node, label = right:{$B$}]{}
+					child{node{G(B,2)}
+						edge from parent node[left]{A}
 					}
-					child{node{G(1)}}
+					child{node{G(B,1)}
+						edge from parent node[right]{R}
+					}
+					edge from parent node[left]{R}
+				}
+				child{node{G(1)}
+					edge from parent node[right]{A}
 				}
 			}
+			edge from parent node[right, yshift = 2]{R}
 		}
-	};
+		edge from parent node[left]{$p_2$}
+	}
+	edge from parent node[right, yshift = 5]{$2$}
+};

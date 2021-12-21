@@ -1,0 +1,41 @@
+\input{./econtexRoot}\documentclass[\econtexRoot/ProjectGAZ]{subfiles}
+\input{./econtexRoot}\input{\LaTeXInputs/econtex_onlyinsubfile}
+\onlyinsubfile{\externaldocument{ProjectGAZ}}
+\begin{document}
+	\hypertarget{ApndxCai03}{}
+
+	\section{Lemmas and semi-proves from \cite{Cai03}}
+		
+	Lemma 1. If the vote sellers form a coalition and bargain with player B as in a standard Rubinstein game, player B gets $\delta/(1 + \delta)$S and the seller coalition gets 1(1 + δ). The outcome is efficient, and player B gets half of the total gain from trade when δ goes to 1.
+	
+	The total share the vote sellers can get when bargaining separately will always be larger than that when bargaining as a coalition. Therefore, the sellers have no incentives to form such a coalition.
+	Assume that the completion of the project is verifiable, then an agreement between player B and seller i specifies a share $f_i \in [0, 1]$ from player B to seller i contingent on the completion of the project. With contingent contracts, the bargaining problem is the standard split-the-pie problem.
+	
+	Lemma 2. In any Subgame Perfect Equilibrium of the game with N sellers, if player B reaches agreements with all the sellers except player i, player B will reach an agreement with player i without delay. Player i asks for a share of $(1 - \sum_{j \neq i} f_i)/(1 + \delta)$ and player B accepts so she gets $(1 - \sum_{j \neq i} f_i)\delta /(1 + \delta)$.
+	
+	When there is only one seller left, the remaining subgame is a standard bilateral Rubinstein bargaining game.The joint surplus of this bargaining game between player B and the last vote seller is the total surplus (i.e., 1) minus the total shares player B has promised all the other sellers. Therefore, with contingent contracts, the sellers who reach agreements earlier have an inherent advantage over the other sellers, because their contracts with player B effectively constrain the joint surplus available in the later rounds of bargaining with the remaining other sellers.
+	One corollary of Lemma 2 is that player B and the seller who signs the last contract will get the same payoff as δ goes to one. Consequently, the most player B can hope for is half of the total surplus when $\delta$ is close to one.
+
+\onlyinsubfile{\pagebreak\input{\LaTeXInputs/bibliography_blend}}
+\end{document}\endinput
+
+
+% Local Variables:
+% eval: (setq TeX-command-list  (assq-delete-all (car (assoc "BibTeX" TeX-command-list)) TeX-command-list))
+% eval: (setq TeX-command-list  (assq-delete-all (car (assoc "BibTeX" TeX-command-list)) TeX-command-list))
+% eval: (setq TeX-command-list  (assq-delete-all (car (assoc "BibTeX" TeX-command-list)) TeX-command-list))
+% eval: (setq TeX-command-list  (assq-delete-all (car (assoc "BibTeX" TeX-command-list)) TeX-command-list))
+% eval: (setq TeX-command-list  (assq-delete-all (car (assoc "Biber"  TeX-command-list)) TeX-command-list))
+% eval: (add-to-list 'TeX-command-list '("BibTeX" "bibtex ../LaTeX/%s" TeX-run-BibTeX nil t                                                                              :help "Run BibTeX") t)
+% eval: (add-to-list 'TeX-command-list '("BibTeX" "bibtex ../LaTeX/%s" TeX-run-BibTeX nil (plain-tex-mode latex-mode doctex-mode ams-tex-mode texinfo-mode context-mode) :help "Run BibTeX") t)
+% TeX-PDF-mode: t
+% TeX-file-line-error: t
+% TeX-debug-warnings: t
+% LaTeX-command-style: (("" "%(PDF)%(latex) %(file-line-error) %(extraopts) -output-directory=../LaTeX %S%(PDFout)"))
+% TeX-source-correlate-mode: t
+% TeX-parse-self: t
+% eval: (cond ((string-equal system-type "darwin") (progn (setq TeX-view-program-list '(("Skim" "/Applications/Skim.app/Contents/SharedSupport/displayline -b %n ../LaTeX/%o %b"))))))
+% eval: (cond ((string-equal system-type "gnu/linux") (progn (setq TeX-view-program-list '(("Evince" "evince --page-index=%(outpage) ../LaTeX/%o"))))))
+% eval: (cond ((string-equal system-type "gnu/linux") (progn (setq TeX-view-program-selection '((output-pdf "Evince"))))))
+% TeX-parse-all-errors: t
+% End:
