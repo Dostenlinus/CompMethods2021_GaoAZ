@@ -1,0 +1,31 @@
+\tikzstyle{level 1} = [level distance = 15mm, sibling distance = 40mm]
+\tikzstyle{level 2} = [level distance = 15mm, sibling distance = 20mm]
+\node(0){B}
+	child{node{B}
+		child{node{1}
+			child{node{1}
+				child{node{B}
+					child{node{G(2)}}
+					child{node{B}
+						child{node{G(B,1)}}
+						child{node{G(B,2)}}
+					}
+				}
+			}
+			child{node{G(2)}}
+		}
+	}
+	child{node{B}
+		child{node{2}
+			child{node{G(1)}}
+			child{node{2}
+				child{node{B}
+					child{node{B}
+						child{node{G(B,2)}}
+						child{node{G(B,1)}}
+					}
+					child{node{G(1)}}
+				}
+			}
+		}
+	};

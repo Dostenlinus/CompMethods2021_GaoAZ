@@ -100,9 +100,8 @@ The game continues until all sellers sell their votes or no new purchases can be
 \providecommand{\figFile}{\figName}
 \hypertarget{\figFile}{}
 \input{\FigDir/\figName}
-%This input does not work
 
-Figure \ref{fig:Xiao2seller} 2-seller Game Tree %Yet the reference works...
+%Figure \ref{fig:Xiao2seller} Extensive form of Xiao(2010) 2-seller game
 
 \subsection{Payoffs}\label{subsec:Xiao-Payoff}
 
@@ -295,7 +294,12 @@ There may be multiple equilibria with different lengths of temptation and exploi
 
 \subsubsection{Comparison}
 
-For patient enough agents, the transfer promise yields higher payoffs compared to the up-front payment. The intuition is that, in up-front payment, the seller can exploit sellers with higher costs at later periods to reduce present-discounted payments.
+For patient enough agents, the transfer promise yields higher payoffs compared to the up-front payment. The intuition is that, in up-front payment, the seller can exploit sellers with higher costs at later periods to reduce present-discounted payments. Figure \ref{fig:sampleTP} and Figure \ref{fig:sampleUP} below illustrates payment that agents would receive in the following setting: $x_1 = 1, x_2 \in (1, 10), x_3 = 10, y = 10, \delta = 0.2$.
+
+
+\input{\FigDir/sampleTP}
+\input{\FigDir/sampleUP}
+
 
 \subsection{Remarks}
 
@@ -319,7 +323,6 @@ In addition to all the previous remarks, one additional extension that comes to 
 Completely private history may not be that interesting, since sellers have very limited information on past offers. One alternative approach may be public history among coalitions, where sellers with similar interests communicate with each other and share past offer details within the group. We can also allow information update via networks, which I'm not sure if it worth the additional complexity.
 
 
-%failed to work with economics.bib, so go for the easy way...
 \newpage
 
 \cite{Cai03}

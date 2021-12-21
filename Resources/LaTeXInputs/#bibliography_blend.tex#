@@ -25,18 +25,6 @@
   \setboolean{BothExist}{false}
 }
 
-\IfFileExists{economics.bib}{
-	% then
-	\typeout{References in default global economics.bib will be used for items not found elsewhere}
-	\setboolean{economicsExists}{true}
-	\setboolean{NeitherExists}{false}
-}{
-	% else
-	\typeout{Found no global database file}
-	\setboolean{economicsExists}{false}
-	\setboolean{BothExist}{false}
-}
-
 \ifthenelse{\boolean{BothExist}}{
   % then use both
   \typeout{bibliography{\econtexRoot/Add-Refs,\econtexRoot/\texname,economics}}
